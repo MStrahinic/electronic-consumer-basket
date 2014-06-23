@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="pl.paketBean">
+
+	<class name="pl.paketBean.KorisnikBean" table="Korisnik" >
+            
+		<id name="korisnikId" column="korisnikId">
+                    <generator class="assigned"></generator>
+                </id>
+                
+                <property name="ime" column="ime"/>
+                
+                <property name="prezime" column="prezime"/>
+
+                <property name="email" column="email"/>
+
+                <property name="adresa" column="adresa"/>
+
+                <property name="telefon" column="telefon"/>
+
+                <property name="korisnickoIme" column="korisnickoIme"/>
+
+                <property name="lozinka" column="lozinka"/>
+                
+                <property name="admin" column="administrator" type="int"/>
+		
+	</class>
+	
+</hibernate-mapping>

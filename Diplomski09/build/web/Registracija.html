@@ -1,0 +1,128 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Registracija</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script language="JavaScript">
+        function validacijaUnosa()
+        {
+        var ime=Registracija.ime.value;
+        var prezime=Registracija.prezime.value;
+        var korisnickoIme=Registracija.korisnickoIme.value;
+        var lozinka=Registracija.lozinka.value;
+        var potvrdaLozinke=Registracija.potvrdaLozinke.value;
+        var adresa = Registracija.adresa.value;
+        var telefon = Registracija.telefon.value;
+        var email=Registracija.email.value;
+        var tekst=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (ime.toString()=="" && prezime.toString()=="" && korisnickoIme.toString()=="" && lozinka.toString()=="" && 
+            potvrdaLozinke.toString()=="" && adresa.toString()=="" && telefon.toString()=="" && email.toString()=="") {
+            alert("Niste uneli nijedan podatak!!!");
+            return false;
+        }
+        else if ( ime.toString()=="" || prezime.toString()=="" || prezime.toString()=="" ||
+                   korisnickoIme.toString()=="" || lozinka.toString()=="" || potvrdaLozinke.toString()=="" ||
+                   adresa.toString()=="" || telefon.toString()=="" ||  email.toString()=="" ) {
+            alert("Neki podatak vam nedostaje!!!");
+            return false;
+        }
+
+        else if(!tekst.test(email)){
+            alert("Email nije uredu");
+            return false;
+        }
+        else if(lozinka!=potvrdaLozinke){
+            alert("Lozinka i potvrda lozinke nisu isti!!!");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    </script>
+
+	<style type="text/css">
+	body
+	{
+		background: white url(slike/pozadina01.jpg) repeat-x;
+		height: auto;
+		line-height: normal;
+		text-decoration: none;
+		letter-spacing: normal;
+		background-attachment: fixed
+	}
+	</style>
+
+  </head>
+  <body bgcolor = "#000000">
+	<center><h1>Registracija korisnika</h1></center>
+	<hr align = "center" width="50%" size = "4" noshade>
+
+	<form name="Registracija" method="post" action="Registracija" onsubmit="return validacijaUnosa();">
+		<table align="center" cellspacing="3" cellpadding="5" width="28%" border="0">
+        <tr>
+             <td>&nbsp;</td>
+             <td>&nbsp;</td>
+        </tr>
+        <tr>
+             <td><font size = "5">Ime:</font></td>
+             <td><input type = "text" name = "ime" value = ""></td>
+
+        </tr>
+        <tr>
+             <td><font size = "5">Prezime:</font></td>
+             <td><input type="text" name="prezime" value = ""></td>
+        </tr>
+        <tr>
+             <td><font size = "5">Korisnicko ime:</font></td>
+             <td><input type="text" name="korisnickoIme" value = ""></td>
+
+        </tr>
+        <tr>
+             <td><font size = "5">Lozinka:</font></td>
+             <td><input type="password" name="lozinka" value = ""></td>
+        </tr>
+        <tr>
+             <td><font size = "5">Potvrda lozinke:</font></td>
+             <td><input type="password" name="potvrdaLozinke" value = ""></td>
+
+        </tr>
+        <tr>
+             <td><font size = "5">Adresa:</font></td>
+             <td><input type="text" name="adresa" value = ""></td>
+        </tr>
+        <tr>
+             <td><font size = "5">Telefon:</font></td>
+             <td><input type="text" name="telefon" value = ""></td>
+        </tr>
+        <tr>
+             <td><font size = "5">E-mail:</font></td>
+             <td><input type="text" name="email" value = ""></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+
+        </tr>
+        <tr>
+            <th width = "50%"><input type="submit" name="prosledi" value="Registruj se"></th>
+            <th width = "50%"><input type="reset" name="odustani" value="Obrisi"></th>
+        </tr>
+        <tr>
+             <td>&nbsp;</td>
+             <td>&nbsp;</td>
+        </tr>
+	  </table>
+      <center><b><font size = "4" face = "Arial, Helvetica, Geneva"><a href="Logovanje.html">NAZAD</a></font></b></center>
+	</form>
+    
+    <hr align="center" width="50%" size = "4" noshade>
+          <center><b>Milan Strahinić :: B/RT-9/09 <a href="mailto:strahinicmilan@gmail.com">kontakt</a></b></center>
+  </body>
+</html>

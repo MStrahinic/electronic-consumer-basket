@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="pl.paketBean">
+
+	<class name="pl.paketBean.ProizvodBean" table="Proizvod" >
+            
+		<id name="proizvodID" column="proizvodId">
+                    <generator class="assigned"></generator>
+                </id>
+                
+                <property name="naziv" column="naziv"/>
+                
+                <property name="opis" column="opis"/>
+                
+                <property name="cena" column="cena" type="double"/>
+
+                <property name="kolicina" column="kolicina" type="int"/>
+
+                <property name="datumPoslednjeIzmene" column="datumPoslednjeIzmene"/>
+
+                <property name="adminPoslednjeIzmene" column="adminPoslednjeIzmene"/>
+
+                <property name="slika" column="slika"/>
+
+
+		
+	</class>
+	
+</hibernate-mapping>

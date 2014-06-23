@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+    package="pl.paketBean">
+
+    <class name="pl.paketBean.StavkaPKBean" table="stavkapk" >
+
+		
+        
+        <id name="RB" column="RB">
+                    <generator class="assigned"></generator>
+                </id>
+
+
+        <many-to-one name="proizvod" class="pl.paketBean.ProizvodBean" column="proizvodID" lazy="false" cascade="none" />
+
+                <property name="kolicina" column="Kolicina" type="int"/>
+                <property name="korisnikId" column="korisnikID" type="int"/>
+                <property name="PKID" column="PKID" type="int"/>
+
+
+	</class>
+  
+</hibernate-mapping>

@@ -1,0 +1,100 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Promena lozinke</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language = "JavaScript">
+        function validacijaUnosa()
+		{
+            var korisnickoIme=Promena.korisnickoIme.value;
+            var lozinka=Promena.lozinka.value;
+            var novaLozinka=Promena.novaLozinka.value;
+            var potvrdaLozinke=Promena.potvrdaLozinke.value;
+
+        if (korisnickoIme.toString()=="" && lozinka.toString()=="" && novaLozinka.toString()=="" && potvrdaLozinke.toString()=="") {
+            alert("Niste uneli nijedan podatak!!!");
+            return false;
+        }
+        else if( korisnickoIme.toString()=="" || lozinka.toString()=="" || novaLozinka.toString()=="" || potvrdaLozinke.toString()==""){
+            alert("Neki podatak vam nedostaje!!!")
+            return false;
+        }
+        else if(novaLozinka != potvrdaLozinke){
+            alert("Nova lozinka i potvrda lozinke nisu iste!!!")
+            return false;
+        }
+        else{
+            alert("Promena je uspesna!\nKliknite na OK za povratak na stranicu za logovanje!")
+            return true;
+        }
+    }
+     </script>
+
+	 <style type="text/css">
+	body
+	{
+		background: white url(slike/pozadina01.jpg) repeat-x;
+		height: auto;
+		line-height: normal;
+		text-decoration: none;
+		letter-spacing: normal;
+		background-attachment: fixed
+	}
+	</style>
+  </head>
+
+  <body bgcolor = "#000000">
+    <center><h1>Promena lozinke</h1></center>
+    <hr align = "center" width = "50%" size = "4" noshade>
+
+    <form name = "Promena" method="post" action="PromenaLozinke" onSubmit="return validacijaUnosa();">
+      <table  align="center"  cellspacing="3" cellpadding="5" width="28%" border="0">
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><font size = "5">Korisnicko ime:</font></td>
+
+          <td><input type="text" name="korisnickoIme" value=""></td>
+        </tr>
+        <tr>
+          <td><font size = "5">Lozinka:</font></td>
+          <td><input type="password" name="lozinka" value=""></td>
+        </tr>
+        <tr>
+          <td><font size = "5">Nova lozinka:</font></td>
+
+          <td><input type="password" name="novaLozinka" value=""></td>
+        </tr>
+        <tr>
+          <td><font size = "5">Potvrda lozinke:</font></td>
+          <td><input type="password" name="potvrdaLozinke" value=""></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th width = "50%"><input type="submit" name="prosledi" value="Prosledi"></th>
+            <th width = "50%"><input type="reset" name="odustani" value="Ponisti"></th>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+      </table>
+      <center><b><font size = "4" face = "Arial, Helvetica, Geneva"><a href="Logovanje.html">NAZAD</a></font></b></center>
+    </form>
+    <br/>
+    <hr align="center" width="50%" size = "4" noshade>
+          <center><b>Milan Strahinić :: B/RT-9/09 <a href="mailto:strahinicmilan@gmail.com">kontakt</a></b></center>
+  </body>
+</html>
+
+  

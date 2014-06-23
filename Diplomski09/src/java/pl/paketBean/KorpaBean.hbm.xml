@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+    package="pl.paketBean">
+
+    <class name="pl.paketBean.KorpaBean" table="potrosackakorpa" >
+
+
+            <id name="PKID" column="PKID" >
+                    <generator class="assigned"></generator>
+                </id>
+
+                <property name="korisnikId" column="korisnikId" type="int"/>
+
+                <property name="datumKreiranja" column="DatumKreiranja"/>
+
+                <property name="adresaIsporuke" column="AdresaIsporuke"/>
+
+                <property name="status" column="Status" type="int"/>
+
+                <property name="datumNarucivanja" column="DatumNarucivanja"/>
+
+                <list name="stavke" cascade="all" lazy="false" >
+                    <key column="PKID"/> <list-index column="RB" base="1"/>
+                    <one-to-many class="pl.paketBean.StavkaPKBean"/>
+                </list>
+
+	</class>
+  
+</hibernate-mapping>
